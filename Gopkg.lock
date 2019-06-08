@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/container-storage-interface/spec"
   packages = ["lib/go/csi"]
-  revision = "ed0bb0e1557548aa028307f48728767cfe8f6345"
-  version = "v1.0.0"
+  revision = "f750e6765f5f6b4ac0e13e95214d58901290fb4b"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -97,12 +97,6 @@
   packages = ["protosanitizer"]
   revision = "5853414e1d4771302e0df10d1870c444c2135799"
   version = "v0.2.0"
-
-[[projects]]
-  name = "github.com/kubernetes-csi/drivers"
-  packages = ["pkg/csi-common"]
-  revision = "8a4ae6feb47cf7ae29b3dab9e3dc3d1ff796fbf2"
-  version = "v1.0.2"
 
 [[projects]]
   name = "github.com/matttproud/golang_protobuf_extensions"
@@ -624,6 +618,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "97f12fe99df252acef5acde772dd64b81eb43a6df606d048ff1f81d2705bafab"
+  inputs-digest = "6150221cd71f06d608b019cfb84207b6b370b414ceb86ddd7a8417771e267555"
   solver-name = "gps-cdcl"
   solver-version = 1
