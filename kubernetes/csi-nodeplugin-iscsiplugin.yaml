@@ -53,6 +53,10 @@ spec:
                   fieldPath: spec.nodeName
             - name: CSI_ENDPOINT
               value: unix://plugin/csi.sock
+            - name: iSCSI_INITIATOR_NAME_PREFIX
+              value: "iqn.2019-06.com.csi-driver-iscsi.example"
+            - name: iSCSI_INITIATOR_NAME
+              value: "$(iSCSI_INITIATOR_NAME_PREFIX):$(NODE_ID)"
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
             - name: plugin-dir
@@ -62,16 +66,10 @@ spec:
               mountPropagation: "Bidirectional"
             - mountPath: /lib/modules
               name: lib-modules
-              mountPropagation: "Bidirectional"
-            - mountPath: /etc/iscsi/
-              name: initiatorname
-              readOnly: true
             - mountPath: /sys
               name: sysfs
-              mountPropagation: "Bidirectional"
-            - mountPath: /dev/disk/by-path
-              name: dev-disk-by-path
-              readOnly: true
+            - mountPath: /dev
+              name: dev
       volumes:
         - name: plugin-dir
           hostPath:
@@ -89,15 +87,11 @@ spec:
           hostPath:
             path: /lib/modules
             type: Directory
-        - name: initiatorname
-          hostPath:
-            path: /etc/iscsi/
-            type: Directory
         - name: sysfs
           hostPath:
             path: /sys
             type: Directory
-        - name: dev-disk-by-path
+        - name: dev
           hostPath:
-            path: /dev/disk/by-path
+            path: /dev
             type: Directory

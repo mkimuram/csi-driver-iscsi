@@ -19,6 +19,5 @@ spec:
       iqn: "iqn.2003-01.org.linux-iscsi.example:targetd"
       lun: "0"
       iscsiInterface: "default"
-      initiatorName: "iqn.2019-06.com.example:node1"
       discoveryCHAPAuth: "false"
       sessionCHAPAuth: "false"
